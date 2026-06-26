@@ -1,2 +1,2 @@
-# react-course
-Homework React course
+## Задание D3-1
+Настройка GitHub репозитория и знакомство с Git.
