@@ -1,4 +1,8 @@
 function Reviews({ reviews }) {
+  if (!reviews || reviews.length === 0) {
+    return <p>Отзывов пока нет</p>;
+  }
+
   return (
     <div>
       <h3>Отзывы</h3>
