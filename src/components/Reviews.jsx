@@ -1,16 +1,23 @@
+import ReviewForm from './ReviewForm';
+
 function Reviews({ reviews }) {
-  if (!reviews || reviews.length === 0) {
-    return <p>Отзывов пока нет</p>;
-  }
+  const hasReviews = reviews && reviews.length > 0;
 
   return (
     <div>
       <h3>Отзывы</h3>
-      <ul>
-        {reviews.map((review) => (
-          <li key={review.id}>{review.text}</li>
-        ))}
-      </ul>
+
+      {hasReviews ? (
+        <ul>
+          {reviews.map((review) => (
+            <li key={review.id}>{review.text}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>Отзывов пока нет.</p>
+      )}
+
+      <ReviewForm />
     </div>
   );
 }

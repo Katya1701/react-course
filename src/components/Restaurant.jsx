@@ -8,7 +8,7 @@ function Restaurant({ restaurant }) {
 
       <Menu menu={restaurant.menu} />
 
-      <Reviews reviews={restaurant.reviews} />
+      <Reviews key={restaurant.id} reviews={restaurant.reviews} />
 
       <hr />
     </div>
