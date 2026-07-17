@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Counter from './Counter';
 
 function Dish({ dish }) {
   const [count, setCount] = useState(0);
@@ -15,14 +16,13 @@ function Dish({ dish }) {
   return (
     <li>
       <span>{dish.name}</span>
-
-      <button onClick={decrement} disabled={count === 0}>
-        -
-      </button>
-      <span> {count} </span>
-      <button onClick={increment} disabled={count === 5}>
-        +
-      </button>
+      <Counter
+        value={count}
+        onIncrement={increment}
+        onDecrement={decrement}
+        min={0}
+        max={5}
+      />
     </li>
   );
 }
