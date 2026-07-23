@@ -1,0 +1,32 @@
+.button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.default {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.default:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+/* Альтернативная тема (например, оранжевая/темная) */
+.alternative {
+  background-color: #f97316;
+  color: white;
+}
+
+.alternative:hover:not(:disabled) {
+  background-color: #ea580c;
+}

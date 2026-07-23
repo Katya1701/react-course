@@ -1,5 +1,7 @@
 import Counter from './Counter';
 import { useReviewForm } from '../hooks/useReviewForm';
+import Button from './Button/Button';
+import styles from './ReviewForm.module.css';
 
 function ReviewForm() {
   const {
@@ -12,21 +14,32 @@ function ReviewForm() {
   } = useReviewForm();
 
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
-      <h4>Оставить отзыв</h4>
+    <form className={styles.card} onSubmit={(e) => e.preventDefault()}>
+      <h4 className={styles.title}>Оставить отзыв</h4>
 
-      <div>
-        <label>Имя:</label>
-        <input type="text" value={state.name} onChange={handleNameChange} />
+      <div className={styles.field}>
+        <label className={styles.label}>Имя</label>
+        <input
+          className={styles.input}
+          type="text"
+          placeholder="Ваше имя"
+          value={state.name}
+          onChange={handleNameChange}
+        />
       </div>
 
-      <div>
-        <label>Текст :</label>
-        <textarea value={state.text} onChange={handleTextChange} />
+      <div className={styles.field}>
+        <label className={styles.label}>Ваш отзыв</label>
+        <textarea
+          className={styles.textarea}
+          placeholder="Поделитесь впечатлениями о блюдах..."
+          value={state.text}
+          onChange={handleTextChange}
+        />
       </div>
 
-      <div>
-        <label>Рейтинг (1-5): </label>
+      <div className={styles.field}>
+        <label className={styles.label}>Оценка (1–5)</label>
         <Counter
           value={state.rating}
           onIncrement={handleRatingIncrement}
@@ -36,7 +49,9 @@ function ReviewForm() {
         />
       </div>
 
-      <button onClick={handleClear}>Clear</button>
+      <div className={styles.actions}>
+        <Button onClick={handleClear}>Очистить форму</Button>
+      </div>
     </form>
   );
 }
