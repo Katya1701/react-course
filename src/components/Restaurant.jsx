@@ -1,16 +1,17 @@
 import Menu from './Menu';
 import Reviews from './Reviews';
+import styles from './Restaurant.module.css';
 
 function Restaurant({ restaurant }) {
   return (
-    <div>
-      <h2>{restaurant.name}</h2>
+    <div className={styles.card}>
+      <h2 className={styles.title}>{restaurant.name}</h2>
 
       <Menu menu={restaurant.menu} />
 
-      <Reviews key={restaurant.id} reviews={restaurant.reviews} />
+      <Reviews reviews={restaurant.reviews} />
 
-      <hr />
+      <hr className={styles.divider} />
     </div>
   );
 }
